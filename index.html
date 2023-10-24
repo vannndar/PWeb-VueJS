@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3"></script>
+    <title>Vue</title>
+  </head>
+  <body>
+    <div id="app">
+      <input v-model="var1">
+      <input v-model="var2">
+      <br>  
+      <button @click="tambah()">+</button>
+      <button @click="kurang()">-</button>
+      <button @click="bagi()">/</button>
+      <button @click="kali()">*</button>
+      <br>
+      <input v-model="hasil">
+    </div>
+    <script>
+      const app = Vue.createApp({
+        data(){
+          return{
+            template: 'nama',
+            hasil: ''
+          }
+        },
+        methods:{
+          tambah(){
+            this.hasil = eval(this.var1 +"+" + this.var2)
+          },
+          kurang(){
+            this.hasil = eval(this.var1 +"-" + this.var2)
+          },
+          bagi(){
+            this.hasil = eval(this.var1 +"/" + this.var2)
+          },
+          kali(){
+            this.hasil = eval(this.var1 +"*" + this.var2)
+          }
+        }
+      })
+      app.mount("#app")
+
+    </script>
+  </body>
+</html>
